@@ -17,4 +17,4 @@ COPY src .
 EXPOSE 3032
 
 # Команда запуска
-CMD ["node", "main.js"]
+ENTRYPOINT ["node", "main.js"]
