@@ -7,9 +7,6 @@ WORKDIR /usr/src/app
 # Копирование package.json и package-lock.json в рабочую директорию
 COPY package*.json ./
 
-# Установка зависимостей
-RUN npm install --omit=dev
-
 # Копирование исходного кода приложения в рабочую директорию
 COPY . .
 
