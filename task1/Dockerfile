@@ -7,9 +7,9 @@ WORKDIR /usr/src/app
 # астериск ("*") по возможности скопирует оба файла: package.json и package-lock.json
 # тот же символ делает копирование опциональным, т. е. без файла сборка не упадёт
 COPY package*.json ./
-# Флаг --omit=dev означает - "не ставить devDependencies"
-# они не нужны нам в продакшен-окружении
-RUN npm install --omit=dev
+
+# Очистка кэша и установка зависимостей
+RUN npm cache clean --force && npm install --omit=dev
 
 # копируем исходный код
 COPY . .
